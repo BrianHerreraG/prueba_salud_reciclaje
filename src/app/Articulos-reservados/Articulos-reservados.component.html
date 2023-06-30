@@ -1,0 +1,37 @@
+<div class="container-components padb p-2">
+<h1 class="p-2 m-0">Lista de articulos reservados</h1>
+
+
+<table class="table table-striped mt-2 p-2" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Articulo</th>
+      <th scope="col">Socio</th>
+      <th scope="col">Precio Ofertado</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of articulos; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+        {{ item.item }}
+      </td>
+      <td>{{ item.socio }}</td>
+      <td class="text-warning font-weight-bold">$ {{ item.precio | number }}</td>
+      <td class="p-1">
+        <!-- <button mat-raised-button class="ps-0 pe-0 h-auto w-auto"> 
+        <fa-icon [icon]="menu" class="text-custom"></fa-icon>
+       </button>  -->
+       <button mat-mini-fab matTooltip="Opciones" color="white" class="" >
+          <mat-icon>menu</mat-icon>
+      </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+</div>

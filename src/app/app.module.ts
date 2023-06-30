@@ -7,11 +7,20 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './Home/Home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ArticulosVendidosComponent } from './Articulos-vendidos/Articulos-vendidos.component';
+import { ArticulosReservadosComponent } from './Articulos-reservados/Articulos-reservados.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [			
     AppComponent,
-      HomeComponent
+      HomeComponent,
+      ArticulosVendidosComponent,
+      ArticulosReservadosComponent
    ],
   imports: [
     BrowserModule,
@@ -19,7 +28,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     BrowserAnimationsModule,
     NgbModule,
-    
+    MatSlideToggleModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule
   ],
   providers: [
     ApiService,

@@ -1,10 +1,11 @@
 <div class="card">
-  <div class="card-header">
-    Articulo: {{item[0].nombre}}
+  <div class="card-header font-weight-bold">
+    <h2 class="card-title">Articulo: {{item[0].nombre}}</h2>
   </div>
   <div class="card-body">
     <h5 class="card-title">{{item[0].bodega}}</h5>
     <p class="card-text">{{item[0].descripcion}}</p>
+    <p class="card-text"><strong>Stock: {{item[0].cantidad_disponible}}</strong></p>
     <p class="card-text"><strong>Precio sugerido: {{item[0].precio_sugerido}}</strong></p>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
@@ -19,6 +20,6 @@
       <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" #monto
         placeholder="Precio ofertado">
     </div>
-    <a href="#" class="btn btn-primary" (click)="guardarDatos(nombre.value,monto.value)">Reservar</a>
+    <a href="#" class="btn btn-primary" (click)="guardarDatos(nombre.value,monto.value)" (click)="activeModal.dismiss('close')">Reservar</a>
   </div>
 </div>

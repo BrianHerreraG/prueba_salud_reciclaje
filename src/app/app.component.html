@@ -201,7 +201,7 @@
   }
 
   .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     color: white;
     padding: 0 1rem 1rem;
     margin: 0;
@@ -245,16 +245,16 @@
     align-items: center;
     font-size: 12px;
     padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
+    border: 1px solid rgba(27, 31, 35, .2);
     border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
     margin-left: 4px;
     font-weight: 600;
   }
 
   .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
+    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+    border-color: rgba(27, 31, 35, .35);
     background-position: -.5em;
   }
 
@@ -274,7 +274,8 @@
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
-    .card-container > *:not(.circle-link) ,
+
+    .card-container>*:not(.circle-link),
     .terminal {
       width: 100%;
     }
@@ -302,17 +303,48 @@
   }
 </style>
 
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="Salud Logo"
-    src="https://www.salud.com.sv/wp-content/themes/salud/images/logo_salud.png"
-  />
-  <span>Lista de Articulos de reciclaje</span>
-</div>
+<!-- Toolbar 
+<div class="toolbar p-2 m-0" role="banner">
+  <i class="bi bi-list p-1" mat-button (click)="drawer.toggle()"></i>
+  <img width="40" alt="Salud Logo" src="https://www.salud.com.sv/wp-content/themes/salud/images/logo_salud.png" />
+  <span>Articulos de reciclaje</span>
+</div> -->
 
-<div class="content" role="main">
-</div>
+<mat-toolbar class="">
+  <button mat-icon-button class="example-icon" mat-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img width="40" alt="Salud Logo" src="https://www.salud.com.sv/wp-content/themes/salud/images/logo_salud.png" />
+  <span class="p-2">Articulos de reciclaje</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
 
-<router-outlet></router-outlet>
+<mat-drawer-container class="container-components">
+  <mat-drawer #drawer class="example-sidenav w-25 ">
+    <div class="d-flex row p-1">
+      <button mat-stroked-button class="mt-2 text-start" routerLink="home">
+        <mat-icon>computer</mat-icon>
+        Lista
+      </button>
+    </div>
+    <div class="d-flex row p-1">
+      <button mat-stroked-button class="mt-2 text-start" routerLink="vendidos" (click)="drawer.toggle()">
+        <mat-icon>attach_money</mat-icon>
+        Vendidos
+      </button>
+    </div>
+    <div class="d-flex row p-1">
+      <button mat-stroked-button class="mt-2 text-start" routerLink="reservados" (click)="drawer.toggle()">
+        <mat-icon>inbox</mat-icon>
+        Reservaciones
+      </button>
+    </div>
+    <div class="d-flex row p-1 ultimo">
+      <button mat-stroked-button class="mt-2 text-start " (click)="drawer.toggle()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        Salir
+      </button>
+    </div>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
