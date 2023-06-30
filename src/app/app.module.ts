@@ -14,7 +14,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ArticulosVendidosComponent } from './Articulos-vendidos/Articulos-vendidos.component';
 import { ArticulosReservadosComponent } from './Articulos-reservados/Articulos-reservados.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [			
     AppComponent,
@@ -32,8 +31,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatToolbarModule,
-    FontAwesomeModule
+    MatToolbarModule
   ],
   providers: [
     ApiService,
