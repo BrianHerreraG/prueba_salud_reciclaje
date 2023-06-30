@@ -11,8 +11,8 @@ export class ModalArticuloComponent implements OnInit {
   //datos
   @Input() id: any=0;
   item:any[]= [];
-  nombre ="";
-  monto = "";
+  nombre:any ="";
+  monto:any = "";
   datos:any ={}
   constructor(public activeModal: NgbActiveModal, private apiService: ApiService) { }
 
@@ -28,9 +28,9 @@ export class ModalArticuloComponent implements OnInit {
     );
   }
 
-  guardarDatos(): void {
+  guardarDatos(nombre:any, monto:any): void {
 
-    this.apiService.guardarDatos(this.id,"Brian",25).subscribe(
+    this.apiService.guardarDatos(this.id,nombre,monto).subscribe(
       data => {
         console.log('Datos guardados con éxito:', data);
       },

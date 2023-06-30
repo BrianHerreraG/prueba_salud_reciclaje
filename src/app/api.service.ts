@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'https://apps.salud.com.sv:1009/reciclajeSocios';
+  public baseUrl = 'https://apps.salud.com.sv:1009/reciclajeSocios';
   private authToken = '21539cd3697b4af3e4e997b1c1121e4ccad0b74d';
 
   constructor(private http: HttpClient) { }
@@ -23,9 +23,12 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/api/articulosreciclaje_all/`, { headers }).toPromise();
   }
 
-  getArticuloImageURL(articuloId: string): string {
-    return `${this.baseUrl}/api/articulosreciclaje_all/${articuloId}/img1`;
-  }
+  // getImagen(registroId: string): Observable<any> {
+  //   const headers = new HttpHeaders().set('Authorization', `Token ${this.authToken}`);
+  //   const url = `${this.baseUrl}/api/articulosreciclaje_pk/${registroId}`;
+  
+  //   return this.http.get(url, { headers });
+  // }
 
   getArticuloReciclajeById(id: string): Observable<any> {
     const headers = new HttpHeaders().set('Authorization', `Token ${this.authToken}`);
@@ -43,6 +46,6 @@ export class ApiService {
         }
     const headers = new HttpHeaders().set('Authorization', `Token ${this.authToken}`);
         console.log(body)
-    return this.http.post(`${this.baseUrl}/api/articulosreciclaje_reservar`, body, { headers });
+    return this.http.post(`${this.baseUrl}/api/articulosreciclaje_reservar/`, body, { headers });
   }
 }

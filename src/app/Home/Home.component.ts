@@ -38,13 +38,10 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  public getImagen(id: string) {
 
-    return this.apiService.getArticuloImageURL(id);
-  }
 
   openModal(id:string){
-    
+
     const modalRef = this.modalService.open(ModalArticuloComponent);
     modalRef.dismissed.subscribe(data => {
     });

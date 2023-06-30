@@ -1,8 +1,8 @@
 <h1 class="p-2 m-0">Lista de Articulos</h1>
-<div class="w-100 row p-4">
-  <div class="m-0 w-25 h m-0 p-1 row " *ngFor="let item of list">
+<div class="w-100 row p-4 ">
+  <div class="m-0 w-50 m-0 p-1 row " *ngFor="let item of list">
     <div class="card altura h-auto">
-      <img class="card-img-top" src="{{getImagen(item.id)}}" alt="Card image cap">
+      <img class="card-img-top" src="{{item.img1}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{item.nombre}}</h5>
         <p class="card-text "><strong>Precio sugerido: {{item.precio_sugerido}}</strong></p>
